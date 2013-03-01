@@ -1,0 +1,59 @@
+﻿@model NerdDinner.Models.Dinner
+@{
+    ViewBag.Title = "Details";  
+     
+    <script type="text/javascript">
+        function AnimateRSVPMessage() {
+            $("#rsvpmsg").animate({ fontSize: "1.5em" }, 400);
+        }
+    </script>
+}
+
+<h2>@Html.Encode(Model.Title)</h2>
+
+<table>
+    <tr>
+        <td>
+            <div id="mapDiv">
+                @{Html.RenderPartial("Map");}
+            </div>
+        </td>
+        <td>
+            <p>
+                <strong>When:</strong>
+                <br />
+                @Model.EventDate.ToShortDateString()
+
+                <strong>@@</strong>
+
+                @Model.EventDate.ToShortTimeString()
+                <br />
+            </p>
+            <p>
+                <strong>Where:</strong>
+                <br />
+                @Html.Encode(Model.Address),
+    @Html.Encode(Model.Country)
+            </p>
+            <p>
+                <strong>Description:</strong>
+                <br />
+                @Html.Encode(Model.Description)
+            </p>
+            <p>
+                <strong>Organizer:</strong>
+                <br />
+                @Html.Encode(Model.HostedBy)
+                @Html.Encode(Model.ContactPhone)
+            </p>
+
+            @{Html.RenderPartial("RSVPStatus");}
+            @{Html.RenderPartial("EditAndDeleteLinks");}
+        </td>
+    </tr>
+</table>
+
+
+
+
+

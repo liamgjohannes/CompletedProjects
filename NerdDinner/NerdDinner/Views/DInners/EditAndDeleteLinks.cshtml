@@ -1,0 +1,12 @@
+﻿@model NerdDinner.Models.Dinner
+
+<p>
+    @if (Model.IsHostedBy(Context.User.Identity.Name))
+    {
+        @Html.ActionLink("Edit Dinner", "Edit", new { id = Model.DinnerID });
+        <br />
+        @Html.ActionLink("Delete Dinner", "Delete", new { id = Model.DinnerID });
+    }
+    <br />
+    @Html.ActionLink("Back to List", "Index")
+</p>

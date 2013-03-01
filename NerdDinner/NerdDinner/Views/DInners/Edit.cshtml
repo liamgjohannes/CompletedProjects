@@ -1,0 +1,8 @@
+﻿@model NerdDinner.Models.DinnerFormViewModel
+@{
+    ViewBag.Title = @Html.Encode(Model.Dinner.Title);
+}
+
+<h2>Edit Dinner</h2>
+
+@{Html.RenderPartial("DinnerForm");}

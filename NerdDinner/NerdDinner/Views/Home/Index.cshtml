@@ -1,0 +1,39 @@
+﻿@model NerdDinner.Models.Dinner
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Find a Dinner</h2>
+
+
+<div id="searchBox">
+    Enter your location: @Html.TextBox("Location")
+    <input id="search" type="submit" value="Search" />
+</div>
+
+
+<div id="theMap">
+</div>
+
+<div id="dinnerList"></div>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+       // LoadMap();
+
+        $('#search').on('click', function (evt) {
+           
+           // var where = jQuery.trim($("#Location").val());
+           //if (where.length < 1)
+           //    return;
+
+           //FindDinnersGivenLocation(where);
+            alert('Button has been clicked');
+        });
+    });
+
+
+
+</script>
